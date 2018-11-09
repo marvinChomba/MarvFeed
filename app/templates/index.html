@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock%}
+
 {% import "macros.html" as macro%}
 {% block content%}
     <form class="text-center form-inline">
