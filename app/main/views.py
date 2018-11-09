@@ -26,5 +26,5 @@ def source_articles(id):
         new_head.append(head.upper())
     final_header = " ".join(new_head)
 
-    return render_template("source_articles.html",articles = articles,header = final_header)
+    return render_template("source_articles.html",articles = articles,header = final_header,title=final_header)
 

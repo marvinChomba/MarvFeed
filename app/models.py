@@ -15,8 +15,9 @@ class Source:
     """
     This is the class we will use to create our sources objects
     """
-    def __init__(self,id,name,description,country):
+    def __init__(self,id,name,description,country,category):
         self.id = id
         self.name = name
         self.description = description  
-        self.country = country
+        self.country = country  
+        self.category  = category

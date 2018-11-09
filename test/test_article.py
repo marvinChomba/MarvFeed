@@ -10,11 +10,14 @@ class TestArticle(unittest.TestCase):
         """
         This will initialize the Article class before each test
         """
-        self.new_article = Article("me","Hey","None","","","","")
+        self.new_article = Article("me","Hey","None","","","","","")
 
     def test_init(self):
+        """
+        This will test whether the Article instance is instantiated correctly
+        """
 
-        self.assertTrue(isinstance(self.new_article,Article))
+        self.assertTrue(self.new_article.author, "me")
 
     def test_return_articles(self):
         """

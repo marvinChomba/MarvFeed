@@ -57,8 +57,9 @@ def process_sources(sources):
         name = source.get("name")
         description = source.get("description")
         country = source.get("country")
+        category = source.get("category")
         if description:
-            new_source = Source(id,name,description,country)
+            new_source = Source(id,name,description,country,category)
             results.append(new_source)
 
     return results
