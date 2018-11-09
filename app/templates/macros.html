@@ -16,11 +16,19 @@
 
 {% macro display_sources(sources)%}
     <div class="container">
-        {% for source in sources %}
-            <h3>{{source.name}}</h3>
-            <p>{{source.description}}</p>
-            <p>{{source.country}}</p>
-            <a href="/sources/articles/{{source.id}}" target="_blank">View Articles</a>
+        {% for row in sources | batch(3) %}
+        <div class="row sources-row">
+            {% for source in row %}
+                <div class="col-md-3 source-card">
+                    <h3>{{source.name}}</h3>
+                    <p>{{source.description}}</p>
+                    <p>{{source.country}}</p>
+                    <div class="btn-container">
+                        <a class="button" href="/sources/articles/{{source.id}}" target="_blank">View Articles</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
         {% endfor %}
     </div>
 {% endmacro %}
