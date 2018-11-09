@@ -90,7 +90,7 @@ def get_sources(category):
 
     with urllib.request.urlopen(sources_url) as url:
         sources_data = url.read()
-        sources_response = json.loads(sources_url)
+        sources_response = json.loads(sources_data)
     
         sources = None
         if sources_response["sources"]:
