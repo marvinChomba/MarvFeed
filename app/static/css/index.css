@@ -1,15 +1,27 @@
+body {
+    background: whitesmoke
+}
+.navbar {
+    background: steelblue;
+    color: white;
+}
 hr {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
 
 img {
-    height: 400px;
-    width: 400px;
+    height: 250px;
+    width: 250px;
+    float: right;
 }
-/* .article-container {
-    height: 600px;
-} */
+img::after {
+    clear: left
+}
+.article-container {
+    margin-bottom: 50px;
+    height: 500px;
+}
 .nav li {
     transition: background 1s,color 1s;
 }
@@ -17,6 +29,7 @@ img {
     background: white;
 }
 li a {
+    color: white;
     transition: color 1s;
 }
 li a:hover {
@@ -25,5 +38,8 @@ li a:hover {
 .headline {
     display: inline-block;
     margin-left: 10%;
-    border-bottom: 2px solid black
+    border-bottom: 2px solid steelblue;
+}
+.navbar-brand {
+    color: white
 }
