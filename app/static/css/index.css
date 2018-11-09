@@ -3,7 +3,8 @@ hr {
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
 body {
-    background: seagreen
+    background: black;
+    color: white;
 }
 img {
     height: 400px;
@@ -12,3 +13,19 @@ img {
 /* .article-container {
     height: 600px;
 } */
+.active {
+    background: white;
+    color: black
+}
+.nav li {
+    transition: background 1s,color 1s;
+}
+.nav li:hover {
+    background: white;
+}
+li a {
+    transition: color 1s;
+}
+li a:hover {
+    color: black
+}
