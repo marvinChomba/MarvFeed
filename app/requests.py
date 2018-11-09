@@ -30,10 +30,10 @@ def process_articles(articles):
         description = article.get("description")
         url = article.get("url")
         image_url = article.get("urlToImage")
-        publish_date = article.get("publishedAt")
+        publish_date = article.get("publishedAt")[0:10]
         content = article.get("content")
         title = article.get("title")
-        if image_url and content:
+        if image_url and content and author:
             new_article = Article(author,title,description,url,image_url,publish_date,content)
             results.append(new_article)
 
@@ -107,7 +107,7 @@ def get_sources_headlines(id):
     Return:
         A list of articles for the specific source
     """
-    sources_article_url = sources_article_url.format(id,api_key)
+    sources_article_url = sources_article_api.format(id,api_key)
 
     with urllib.request.urlopen(sources_article_url) as url:
         headlines_data = url.read()

@@ -6,7 +6,7 @@
                 <h5 class="article-author">{{article.author}}</h5>
                 <img src="{{article.image_url}}" alt="" class="img-responsive">
                 <p>{{article.content}}</p>
-                <p>Published at: {{article.publish_date}}</p>
+                <p>Published on: {{article.publish_date}}</p>
             </div>
         {% endfor %}
     </div>
@@ -18,7 +18,7 @@
             <h3>{{source.name}}</h3>
             <p>{{source.description}}</p>
             <small>{{source.country}}</small>
-            <a href="/sources/articles/{{source.id}}">View Articles</a>
+            <a href="/sources/articles/{{source.id}}" target="_blank">View Articles</a>
         {% endfor %}
     </div>
 {% endmacro %}
