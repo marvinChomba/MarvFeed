@@ -7,6 +7,7 @@
                 <img src="{{article.image_url}}" alt="" class="img-responsive">
                 <p>{{article.content}}</p>
                 <p>Published on: {{article.publish_date}}</p>
+                <a href="{{article.url}}" target="_blank">View Full Article</a>
             </div>
         {% endfor %}
     </div>
@@ -17,7 +18,7 @@
         {% for source in sources %}
             <h3>{{source.name}}</h3>
             <p>{{source.description}}</p>
-            <small>{{source.country}}</small>
+            <p>{{source.country}}</p>
             <a href="/sources/articles/{{source.id}}" target="_blank">View Articles</a>
         {% endfor %}
     </div>

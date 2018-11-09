@@ -5,7 +5,7 @@ api_key = None
 sources_api = None
 headlines_api = None
 sources_article_api = None
-
+search_api = None
 def configure_request(app):
     """
     This is a function that will set the configurations required for the requests
@@ -15,6 +15,7 @@ def configure_request(app):
     sources_api = app.config["SOURCES_API"]
     headlines_api = app.config["HEADLINES_API"]
     sources_article_api  = app.config["SOURCES_ARTICLE_API"]
+    search_api = app.config["SEARCH_API"]
 
 def process_articles(articles):
     """
@@ -120,3 +121,17 @@ def get_sources_headlines(id):
 
     return headlines
         
+def search_articles(search_name):
+
+    search_url = search_api.format(search_name,api_key)
+
+    with urllib.request.urlopen(search_url) as url:
+        search_data = url.read()
+        search_response = json.loads(search_data)
+
+        results = None
+        if search_response["articles"]:
+            search_list = search_response["articles"]
+            results = process_articles(search_list)
+
+    return results
