@@ -9,13 +9,13 @@ class Config():
     SOURCES_API = "https://newsapi.org/v2/sources?language=en&category={}&apiKey={}"
     SOURCES_ARTICLE_API = "https://newsapi.org/v2/top-headlines?sources={}&apiKey={}"
     SEARCH_API = "https://newsapi.org/v2/everything?q={}&apiKey={}"
-    API_KEY = "892aa23cfe754a5bbe2488f3656f413c"
+    API_KEY = os.environ.get("API_KEY")
 
 class DevConfig(Config):
     """
     This is the configurations which we will use during the development stage of the website
     """
-    pass
+    DEBUG = True
 
 class ProdConfig(Config):
     """

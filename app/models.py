@@ -2,8 +2,7 @@ class Article:
     """
     This is the class we will use to create our articles objects
     """
-    def __init__(self,source,author,title,description,url,image_url,publish_date,content):
-        self.source = source
+    def __init__(self,author,title,description,url,image_url,publish_date,content):
         self.author = author
         self.title = title
         self.description = description

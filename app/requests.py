@@ -25,8 +25,7 @@ def process_articles(articles):
         A list of Article instances"
     """
     results =  []
-    for let article in articles:
-        source = article.get("source"["name"])
+    for article in articles:
         author = article.get("author")
         description = article.get("description")
         url = article.get("url")
@@ -35,26 +34,27 @@ def process_articles(articles):
         content = article.get("content")
         title = article.get("title")
         if image_url and content:
-            new_article = Article(source,author,title,description,url,image_url,publish_date,content)
+            new_article = Article(author,title,description,url,image_url,publish_date,content)
             results.append(new_article)
 
     return results
 
 def process_sources(sources):
-        """
+    """
     This is a function that will process the sources list from the api into a list of Source instances
     Args:
         the list of sources
     Return:
         A list of Source instances"
     """
+
     results = []
+
     for source in sources:
         id = source.get("id")
         name = source.get("name")
         description = source.get("description")
         country = source.get("country")
-
         if description:
             new_source = Source(id,name,description,country)
             results.append(new_source)

@@ -2,4 +2,6 @@
 
 {% import "macros.html" as macro%}
 
-{{macro.displayArticles(headlines)}}
+{% block content%}
+    {{macro.display_articles(headlines)}}
+{% endblock %}
