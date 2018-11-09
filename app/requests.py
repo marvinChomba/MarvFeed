@@ -34,8 +34,9 @@ def process_articles(articles):
         publish_date = article.get("publishedAt")[0:10]
         content = article.get("content")
         title = article.get("title")
+        source = article.get("source")["id"]
         if image_url and content and author:
-            new_article = Article(author,title,description,url,image_url,publish_date,content)
+            new_article = Article(author,title,description,url,image_url,publish_date,content,source)
             results.append(new_article)
 
     return results

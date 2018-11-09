@@ -2,7 +2,7 @@ class Article:
     """
     This is the class we will use to create our articles objects
     """
-    def __init__(self,author,title,description,url,image_url,publish_date,content):
+    def __init__(self,author,title,description,url,image_url,publish_date,content,source):
         self.author = author
         self.title = title
         self.description = description
@@ -10,8 +10,8 @@ class Article:
         self.image_url = image_url
         self.publish_date = publish_date
         self.content = content
-
-class Source:
+        self.source = source
+class Source:   
     """
     This is the class we will use to create our sources objects
     """

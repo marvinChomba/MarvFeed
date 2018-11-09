@@ -5,7 +5,7 @@ class Config():
     This is the parent configuration class
     """
 
-    HEADLINES_API  = "https://newsapi.org/v2/top-headlines?country=us&country=gb&apiKey={}"
+    HEADLINES_API  = "https://newsapi.org/v2/top-headlines?country=us&country=gb&country=au&apiKey={}"
     SOURCES_API = "https://newsapi.org/v2/sources?language=en&category={}&apiKey={}"
     SOURCES_ARTICLE_API = "https://newsapi.org/v2/top-headlines?sources={}&apiKey={}"
     SEARCH_API = "https://newsapi.org/v2/everything?q={}&apiKey={}"

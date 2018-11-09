@@ -18,10 +18,10 @@ body {
     display: flex;
     justify-content: space-between
 }
-.container {
+/* .container {
     display: flex;
     justify-content: center;
-}
+} */
 .source-name {
     display: inline-block;
     border-bottom: 1px solid steelblue;
@@ -47,4 +47,9 @@ li a:hover {
 }
 .navbar-brand {
     color: white
+}
+.headline {
+    display: inline-block;
+    margin-left: 10%;
+    border-bottom: 2px solid steelblue;
 }

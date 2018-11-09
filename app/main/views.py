@@ -7,29 +7,24 @@ def index():
 
     headlines = get_headlines() 
     title = "Top Headlines"
-    search_query = request.args.get("search_query")
-    # search_query = "+".join(search_query.split(" "))
-    if search_query:
-        return redirect(url_for("main.search",search_name = search_query))
-    else:
-        return render_template("index.html", headlines=headlines,title=title)
+    return render_template("index.html", headlines=headlines,title=title)
 
 @main.route("/sources/<category>")
 def sources(category):
 
     sources = get_sources(category)
     title = category.capitalize()
-    return render_template("sources.html",sources = sources,title = title)
+    header = category.capitalize()
+    return render_template("sources.html",sources = sources,title = title,header = header)
 
 @main.route("/sources/articles/<id>")
 def source_articles(id):
     articles = get_sources_headlines(id)
-    
-    return render_template("source_articles.html",articles = articles)
+    header = id.split("-")
+    new_head = []
+    for head in header:
+        new_head.append(head.upper())
+    final_header = " ".join(new_head)
 
-# @main.route("search/<search_name>")
-# def search(search_name):
+    return render_template("source_articles.html",articles = articles,header = final_header)
 
-#     articles = search_articles(search_name)
-#     title = search_name
-#     return render_template("search.html",articles = articles,title = title)
