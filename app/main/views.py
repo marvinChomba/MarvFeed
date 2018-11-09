@@ -1,5 +1,5 @@
 from ..requests import get_headlines,get_sources,get_sources_headlines,search_articles
-from flask import render_template,requests,url_for,redirect
+from flask import render_template,request,url_for,redirect
 from . import main
 
 @main.route("/")
@@ -7,10 +7,10 @@ def index():
 
     headlines = get_headlines() 
     title = "Top Headlines"
-    search_query = requests.args.get("search_query")
-
+    search_query = request.args.get("search_query")
+    # search_query = "+".join(search_query.split(" "))
     if search_query:
-        return redirect(url_for("main.search"))
+        return redirect(url_for("main.search",search_name = search_query))
     else:
         return render_template("index.html", headlines=headlines,title=title)
 
@@ -27,13 +27,9 @@ def source_articles(id):
     
     return render_template("source_articles.html",articles = articles)
 
-@main.route("search/<search_name>")
-def search(search_name):
+# @main.route("search/<search_name>")
+# def search(search_name):
 
-    search_format = "+".join(search_name.split(" "))
-    search_results = search_articles(search_format)
-
-    title = search_name
-    return render_template("search.html",articles = search_results,title = title)
-
-    
+#     articles = search_articles(search_name)
+#     title = search_name
+#     return render_template("search.html",articles = articles,title = title)
