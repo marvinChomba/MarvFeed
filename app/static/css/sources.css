@@ -18,6 +18,16 @@ body {
     display: flex;
     justify-content: space-between
 }
+.container {
+    display: flex;
+    justify-content: center;
+}
+.source-name {
+    display: inline-block;
+    border-bottom: 1px solid steelblue;
+    margin-bottom: 0.2em;
+    font-weight: 800;
+}
 .btn-container {
     display: flex;
     justify-content: flex-start;
