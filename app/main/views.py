@@ -1,4 +1,4 @@
-from ..requests import get_headlines,get_sources,get_sources_headlines,search_articles
+from ..requests import get_headlines,get_sources,get_sources_headlines
 from flask import render_template,request,url_for,redirect
 from . import main
 

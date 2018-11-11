@@ -53,3 +53,6 @@ li a:hover {
     margin-left: 10%;
     border-bottom: 2px solid steelblue;
 }
+span.icon-bar {
+    color: white
+}
