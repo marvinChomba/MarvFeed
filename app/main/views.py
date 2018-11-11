@@ -4,14 +4,18 @@ from . import main
 
 @main.route("/")
 def index():
-
+    """
+    View function for the landing page
+    """
     headlines = get_headlines() 
     title = "Top Headlines"
     return render_template("index.html", headlines=headlines,title=title)
 
 @main.route("/sources/<category>")
 def sources(category):
-
+    """
+    View function for the source pages
+    """
     sources = get_sources(category)
     title = category.capitalize()
     header = category.capitalize()
@@ -19,6 +23,9 @@ def sources(category):
 
 @main.route("/sources/articles/<id>")
 def source_articles(id):
+    """
+    View function for a specific source's articles
+    """
     articles = get_sources_headlines(id)
     header = id.split("-")
     new_head = []

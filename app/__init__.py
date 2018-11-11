@@ -6,7 +6,9 @@ from config import config_options
 bootstrap = Bootstrap()
 
 def create_app(config_name):
-
+    """
+    Function that will initialize the Flask instance (app)
+    """
     #create the app instance
     app = Flask(__name__)
 
