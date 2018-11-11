@@ -4,7 +4,7 @@
 Marvin Chomba Kangangi
 
 ### Description
-You will hence create an application that will help them list and preview news articles from various sources.   
+An application that will  list and preview news articles from various sources.   
 
 ### User Stories :family:
 
