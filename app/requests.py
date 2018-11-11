@@ -122,18 +122,3 @@ def get_sources_headlines(id):
             headlines = process_articles(headlines_list)
 
     return headlines
-        
-def search_articles(search_name):
-
-    search_url = search_api.format(search_name,api_key)
-
-    with urllib.request.urlopen(search_url) as url:
-        search_data = url.read()
-        search_response = json.loads(search_data)
-
-        results = None
-        if search_response["articles"]:
-            search_list = search_response["articles"]
-            results = process_articles(search_list)
-
-    return results

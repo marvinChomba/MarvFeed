@@ -21,8 +21,9 @@ class TestArticle(unittest.TestCase):
 
     def test_return_articles(self):
         """
-        This will test whether the get_article function returns a list of article
+        This will test whether the get_headlines function returns a list of article
         """
+        
         self.assertEqual(type(get_headlines()),list)
 
     def test_article_source(self):
@@ -33,6 +34,13 @@ class TestArticle(unittest.TestCase):
         article = new_articles[0]
         self.assertEqual(article.source,"bbc-news")
 
+    def test_article_class(self):
+        """
+        This will test whether the articles received are instances of the Article class
+        """
+        list = get_headlines()
+        first_article = list[0]
+        self.assertTrue(isinstance(first_article,Article))
     
 
     

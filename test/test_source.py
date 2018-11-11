@@ -16,7 +16,17 @@ class TestSource(unittest.TestCase):
         This will test whether the Source instance is instantiated correctly
         """
 
-        self.assertTrue(self.new_source.id,"bbc-news")
+        self.assertEqual(self.new_source.id,"bbc-news")
 
-
+    def test_sources_list(self):
+        """
+        This will test whether the get_sources will return a list of sources
+        """
+        self.assertTrue(type(get_sources("business")) == list)
+    def test_sources_category(self):
+        """
+        This will test whether the sources returned are of the required category
+        """
+        source = get_sources("health")[0]
+        self.assertEqual(source.category,"health")
     
