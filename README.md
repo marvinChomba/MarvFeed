@@ -41,7 +41,8 @@ To access this application on your command line, you need to clone it
 
 ### Known Bugs :x:
 Currently, there are no known bugs
-
+### Live link
+You can view the live site [here](https://marvfeed.herokuapp.com/)
 ### Licence
 This project is under the [MIT](https://github.com/marvinChomba/MarvFeed/blob/master/LICENSE) licence
 
